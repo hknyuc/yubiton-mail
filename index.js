@@ -26,7 +26,7 @@ class Sender {
         let transporter = nodemailer.createTransport(this.transporterOption);
 
         var mailOptions = {
-            from: options.from,
+            from: options.from || this.transporterOption.from,
             to: options.to,
             subject: options.subject,
             html: options.content
